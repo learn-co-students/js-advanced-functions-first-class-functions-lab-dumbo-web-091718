@@ -1,30 +1,25 @@
 // Code your solution in this file!
-const returnFirstTwoDrivers = function(drivers) {
-    return [drivers[0], drivers[1]]
-  }
+const returnFirstTwoDrivers = arr => {
+  return arr.slice(0, 2)
+}
 
-const returnLastTwoDrivers = function(drivers) {
-  return [drivers[drivers.length - 2], drivers[drivers.length - 1]]
+const returnLastTwoDrivers = arr => {
+  return arr.slice(arr.length - 2, arr.length)
 }
 
 const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers]
 
-function createFareMultiplier(integer) {
-   const fare = function(){
-   return integer + (integer * 4)
+function createFareMultiplier(int){
+  const fare = (value) => {
+    return int * value
   }
   return fare
 }
 
-const fareDoubler = function(integer){
-  return integer * 2
-}
+const fareDoubler = createFareMultiplier(2)
 
+const fareTripler = createFareMultiplier(3)
 
-const fareTripler = function(integer){
-  return integer * 3
-}
-
-function fetchSpecifiedDrivers(array, func){
-  return func(array)
+function fetchSpecifiedDrivers(drivers, func) {
+  return func(drivers)
 }
